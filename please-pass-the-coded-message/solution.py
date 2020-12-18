@@ -9,5 +9,8 @@ def get_permutations(l):
             yield value
 
 def solution(l):
-    return max(p for p in get_permutations(l) if p % 3 == 0)
-    
+    value = 0
+    for p in get_permutations(l):
+        if p % 3 == 0:
+            value = max(value, p)
+    return value
